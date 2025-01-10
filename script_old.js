@@ -35,6 +35,8 @@ function initPoints() {
         points.push({
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
+            vx: (Math.random() - 0.5) * 2,
+            vy: (Math.random() - 0.5) * 2,
             size: Math.random() * 3 + 1,
         });
     }
@@ -42,6 +44,8 @@ function initPoints() {
 
 // Draw points on canvas
 function drawPoints() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
     points.forEach(point => {
         const distanceToMouse = mouse.x !== null ? Math.hypot(mouse.x - point.x, mouse.y - point.y) : Infinity;
 
@@ -55,44 +59,26 @@ function drawPoints() {
     });
 }
 
-// Draw lines between points randomly
-function drawLines() {
-    for (let i = 0; i < points.length; i++) {
-        for (let j = i + 1; j < points.length; j++) {
-            const pointA = points[i];
-            const pointB = points[j];
-
-            // Calculate distance between the points
-            const distance = Math.hypot(pointB.x - pointA.x, pointB.y - pointA.y);
-
-            // Only draw lines between points that are within a certain distance
-            if (distance < 150) {
-                ctx.beginPath();
-                ctx.moveTo(pointA.x, pointA.y);
-                ctx.lineTo(pointB.x, pointB.y);
-                ctx.strokeStyle = `rgba(255, 255, 255, ${1 - distance / 150})`; // Transparent lines based on distance
-                ctx.lineWidth = 0.5;
-                ctx.stroke();
-            }
-        }
-    }
-}
-
-// Apply gravity effect to points based on mouse position
-function applyGravity() {
+// Update point positions
+function updatePoints() {
     points.forEach(point => {
+        point.x += point.vx;
+        point.y += point.vy;
+
+        // Bounce off edges
+        if (point.x < 0 || point.x > canvas.width) point.vx *= -1;
+        if (point.y < 0 || point.y > canvas.height) point.vy *= -1;
+
+        // React to mouse
         if (mouse.x !== null) {
-            const dx = mouse.x - point.x;
-            const dy = mouse.y - point.y;
+            const dx = point.x - mouse.x;
+            const dy = point.y - mouse.y;
             const distance = Math.hypot(dx, dy);
 
-            if (distance < 150) {
-                // Apply gravity effect: pull points closer to the mouse
+            if (distance < 100) {
                 const angle = Math.atan2(dy, dx);
-                const force = (150 - distance) / 150; // Inverse of distance (stronger attraction closer to the mouse)
-
-                point.x += Math.cos(angle) * force;
-                point.y += Math.sin(angle) * force;
+                point.vx += Math.cos(angle) * 0.1;
+                point.vy += Math.sin(angle) * 0.1;
             }
         }
     });
@@ -100,10 +86,8 @@ function applyGravity() {
 
 // Animation loop
 function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas each frame
     drawPoints();
-    drawLines();
-    applyGravity();
+    updatePoints();
     requestAnimationFrame(animate);
 }
 
