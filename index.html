@@ -3,11 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Points</title>
+    <title>Your Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <canvas id="cloudCanvas"></canvas>
+
+    <!-- Header with Cloud points background -->
+    <header>
+        <h1>Thomas Menu</h1>
+        <canvas id="cloudCanvas"></canvas>
+    </header>
+
+    <!-- Articles Section -->
+    <section class="projects">
+        <div class="article" onclick="location.href='project1.html'">
+            <img src="project1-image.jpg" alt="Project 1">
+            <h2>Project 1: IoT</h2>
+            <p>A brief description of the project goes here...</p>
+        </div>
+        <div class="article" onclick="location.href='project2.html'">
+            <img src="project2-image.jpg" alt="Project 2">
+            <h2>Project 2: VR</h2>
+            <p>A brief description of the project goes here...</p>
+        </div>
+        <div class="article" onclick="location.href='project3.html'">
+            <img src="project3-image.jpg" alt="Project 3">
+            <h2>Project 3: Web Development</h2>
+            <p>A brief description of the project goes here...</p>
+        </div>
+    </section>
+
     <script src="script.js"></script>
 </body>
 </html>

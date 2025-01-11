@@ -1,12 +1,61 @@
+/* General Layout */
 body {
+    font-family: Arial, sans-serif;
     margin: 0;
-    overflow: hidden;
-    background: #121212; /* Dark background */
+    padding: 0;
 }
 
-canvas {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
+/* Header and Canvas */
+header {
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+    height: 500px;
+    z-index: 2;
+}
+
+header h1 {
+    position: relative;
+    z-index: 3;
+}
+
+/* Article Grid */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin-top: -50px;  /* Adjust based on header height */
+}
+
+.article {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.article img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.article h2 {
+    margin: 10px;
+    font-size: 1.2em;
+}
+
+.article p {
+    margin: 10px;
+    color: #555;
 }

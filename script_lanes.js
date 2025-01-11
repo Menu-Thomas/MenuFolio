@@ -2,14 +2,14 @@
 const canvas = document.getElementById('cloudCanvas');
 const ctx = canvas.getContext('2d');
 
-// Set canvas size dynamically
+// Set canvas size to full window
 canvas.width = window.innerWidth;
-canvas.height = 500; // Fixed height for the canvas (you can adjust this)
+canvas.height = window.innerHeight;
 
 window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
-    canvas.height = 500;  // Fixed height for the canvas
-    initPoints(); // Reinitialize points with new canvas size
+    canvas.height = window.innerHeight;
+    initPoints(); // Reinitialize points on resize
 });
 
 // Mouse position tracking
@@ -25,18 +25,17 @@ canvas.addEventListener('mouseleave', () => {
     mouse.y = null;
 });
 
-// Points array
+// Create points
 let points = [];
 const pointCount = 150;
 
-// Create points based on canvas size
 function initPoints() {
     points = [];
     for (let i = 0; i < pointCount; i++) {
         points.push({
-            x: Math.random() * canvas.width,   // Random x within canvas width
-            y: Math.random() * canvas.height,  // Random y within canvas height
-            size: Math.random() * 3 + 1,       // Random point size
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            size: Math.random() * 3 + 1,
         });
     }
 }
@@ -46,7 +45,7 @@ function drawPoints() {
     points.forEach(point => {
         const distanceToMouse = mouse.x !== null ? Math.hypot(mouse.x - point.x, mouse.y - point.y) : Infinity;
 
-        // Adjust size based on proximity to mouse
+        // Change size based on proximity to mouse
         const size = distanceToMouse < 100 ? point.size * 2 : point.size;
 
         ctx.beginPath();
@@ -66,7 +65,7 @@ function drawLines() {
             // Calculate distance between the points
             const distance = Math.hypot(pointB.x - pointA.x, pointB.y - pointA.y);
 
-            // Only draw lines between points within a certain distance
+            // Only draw lines between points that are within a certain distance
             if (distance < 150) {
                 ctx.beginPath();
                 ctx.moveTo(pointA.x, pointA.y);
