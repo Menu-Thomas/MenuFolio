@@ -14,7 +14,9 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
     gap: 35px; /* Increase the gap between articles */
     padding: 20px;
-    margin-top: 20px;  /* Add space between the header and the body */
+    margin: 20px auto; /* Center the grid container */
+    max-width: 1200px; /* Set a maximum width for the grid container */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 .article {
