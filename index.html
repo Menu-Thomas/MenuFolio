@@ -4,35 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/pages/home.css">
 </head>
 <body>
 
+    <!-- Navigation Bar -->
+    <div id="navbar"></div>
+
     <!-- Header with Cloud points background -->
     <header>
-        <h1>Thomas Menu</h1>
         <canvas id="cloudCanvas"></canvas>
     </header>
 
+    <!-- Horizontal Rule -->
+    <hr class="divider">
+
     <!-- Articles Section -->
-    <section class="projects">
+    <section class="projects" id="projects">
         <div class="article" onclick="location.href='project1.html'">
-            <img src="project1-image.jpg" alt="Project 1">
+            <div class="image-container">
+                <img src="project1-image1.jpg" alt="Project 1">
+            </div>
             <h2>Project 1: IoT</h2>
             <p>A brief description of the project goes here...</p>
         </div>
         <div class="article" onclick="location.href='project2.html'">
-            <img src="project2-image.jpg" alt="Project 2">
+            <div class="image-container">
+                <img src="project2-image.jpg" alt="Project 2">
+            </div>
             <h2>Project 2: VR</h2>
             <p>A brief description of the project goes here...</p>
         </div>
         <div class="article" onclick="location.href='project3.html'">
-            <img src="project3-image.jpg" alt="Project 3">
+            <div class="image-container">
+                <img src="project3-image.jpg" alt="Project 3">
+            </div>
+            <h2>Project 3: Web Development</h2>
+            <p>A brief description of the project goes here...</p>
+        </div>
+        <div class="article" onclick="location.href='project3.html'">
+            <div class="image-container">
+                <img src="project3-image.jpg" alt="Project 3">
+            </div>
+            <h2>Project 3: Web Development</h2>
+            <p>A brief description of the project goes here...</p>
+        </div>
+        <div class="article" onclick="location.href='project3.html'">
+            <div class="image-container">
+                <img src="project3-image.jpg" alt="Project 3">
+            </div>
             <h2>Project 3: Web Development</h2>
             <p>A brief description of the project goes here...</p>
         </div>
     </section>
 
-    <script src="script.js"></script>
+    <script src="canvas-animation.js"></script>
+    <script src="navbar.js"></script>
 </body>
 </html>

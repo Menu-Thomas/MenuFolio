@@ -1,32 +1,3 @@
-/* General Layout */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-/* Project Header */
-.project-header {
-    text-align: center;
-    padding: 20px;
-    background: #333;
-    color: white;
-    height: 500px;
-    position: relative;
-    overflow: hidden; /* Ensure the content does not overflow */
-}
-
-.project-header h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    position: relative;
-    z-index: 2; /* Ensure the title is above the image */
-    background-color: rgba(0, 0, 0, 0.76); /* Add a semi-transparent background */
-    padding: 10px 20px; /* Add padding */
-    border-radius: 10px; /* Add rounded corners */
-    display: inline-block; /* Adjust display to fit content */
-}
-
 /* Photo Binder */
 .photo-binder {
     position: absolute;
@@ -86,10 +57,4 @@ body {
 
 .dot.active {
     background-color: #717171;
-}
-
-/* Project Details */
-.project-details {
-    padding: 20px;
-    text-align: center;
 }

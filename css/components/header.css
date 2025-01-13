@@ -1,0 +1,92 @@
+/* Header */
+header {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+    height: 50vh; /* Set height as a percentage of the viewport height */
+    position: relative;
+    overflow: hidden; /* Ensure the content does not overflow */
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2; /* Ensure the title is above the image */
+    background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background */
+    padding: 10px 20px; /* Add padding */
+    border-radius: 10px; /* Add rounded corners */
+    display: inline-block; /* Adjust display to fit content */
+}
+
+nav {
+    position: fixed; /* Fix the nav bar at the top */
+    top: 0;
+    width: 100%;
+    background: #333;
+    z-index: 3; /* Ensure the nav is above other elements */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Responsive grid */
+    gap: 10px;
+    margin: 0;
+    justify-items: center; /* Center the nav items */
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        height: 40vh; /* Adjust height for tablets */
+    }
+
+    header h1 {
+        font-size: 2em; /* Adjust the title size for tablets */
+    }
+
+    nav ul li a {
+        font-size: 1em; /* Adjust the nav link size for tablets */
+        padding: 8px 15px; /* Adjust the padding for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        height: 30vh; /* Adjust height for smartphones */
+    }
+
+    header h1 {
+        font-size: 1.5em; /* Adjust the title size for smartphones */
+    }
+
+    nav ul {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for nav items on small screens */
+    }
+
+    nav ul li a {
+        font-size: 1em; /* Adjust the nav link size for smartphones */
+        padding: 10px 15px; /* Adjust the padding for smartphones */
+    }
+}

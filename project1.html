@@ -4,22 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 1 - IoT</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/photo-binder.css">
+    <link rel="stylesheet" href="css/pages/project.css">
 </head>
 <body>
 
+    <!-- Navigation Bar -->
+    <div id="navbar"></div>
+
     <!-- Project Header -->
-    <header>
+    <header class="project-header">
         <h1>Project 1: IoT</h1>
+        <div class="photo-binder">
+            <div class="arrow left" onclick="prevImage()">&#10094;</div>
+            <img src="project1-image1.jpg" alt="Project 1 Image" class="binder-image">
+            <div class="arrow right" onclick="nextImage()">&#10095;</div>
+            <div class="dots">
+                <span class="dot" onclick="currentImage(1)"></span>
+                <span class="dot" onclick="currentImage(2)"></span>
+                <span class="dot" onclick="currentImage(3)"></span>
+                <!-- Add more dots as needed -->
+            </div>
+        </div>
     </header>
 
     <!-- Project Description -->
     <section class="project-details">
-        <img src="project1-image.jpg" alt="Project 1 Image">
         <p>This is where a detailed description of the IoT project will go. You can explain the tech stack, goals, challenges faced, and outcomes.</p>
         <p>More about the project can go here, such as code snippets, images, and other media related to the project.</p>
     </section>
 
-    <script src="script.js"></script>
+    <script src="photo-binder.js"></script>
+    <script src="navbar.js"></script>
 </body>
 </html>

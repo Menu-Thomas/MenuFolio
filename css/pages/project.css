@@ -1,0 +1,17 @@
+/* Project Details */
+.project-details {
+    padding: 20px;
+    text-align: center;
+}
+
+.project-details img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.project-details p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
