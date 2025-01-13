@@ -4,20 +4,19 @@ const ctx = canvas.getContext('2d');
 
 // Set canvas size dynamically
 canvas.width = window.innerWidth;
-canvas.height = document.querySelector('header').offsetHeight; 
+canvas.height = document.querySelector('header').offsetHeight; // Set height to match the header
 
 window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
-    canvas.height = 500;  // Fixed height for the canvas
+    canvas.height = document.querySelector('header').offsetHeight; // Set height to match the header
     initPoints(); // Reinitialize points with new canvas size
 });
 
 // Mouse position tracking
 let mouse = { x: null, y: null };
 
-// Handle mouse events on the header instead of the canvas
+// Handle mouse events on the canvas
 const header = document.querySelector('header');
-
 header.addEventListener('mousemove', (event) => {
     const rect = canvas.getBoundingClientRect();
     mouse.x = event.clientX - rect.left;
@@ -128,7 +127,15 @@ function drawText() {
     ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.fillText('Thomas Menu', canvas.width / 2, canvas.height / 2);
+
+    if (window.innerWidth <= 480) {
+        // Split text into two lines for smaller screens
+        ctx.fillText('Thomas', canvas.width / 2, canvas.height / 2 - fontSize / 2);
+        ctx.fillText('Menu', canvas.width / 2, canvas.height / 2 + fontSize / 2);
+    } else {
+        // Single line for larger screens
+        ctx.fillText('Thomas Menu', canvas.width / 2, canvas.height / 2);
+    }
 }
 
 // Get responsive font size
