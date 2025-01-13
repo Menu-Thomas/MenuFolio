@@ -21,11 +21,10 @@ header h1 {
 }
 
 nav {
-    position: fixed; /* Fix the nav bar at the top */
-    top: 0;
-    width: 100%;
-    background: #333;
-    z-index: 3; /* Ensure the nav is above other elements */
+    position: relative; /* Position the nav bar within the header */
+    z-index: 2; /* Ensure the nav is above the canvas */
+    margin-top: 20px; /* Add some space above the nav bar */
+    padding-top: 10px; /* Add some padding to lower the nav bar */
 }
 
 nav ul {
@@ -47,13 +46,14 @@ nav ul li a {
     text-decoration: none;
     font-size: 1.2em;
     padding: 10px 20px;
+    background-color: #444; /* Button background color */
+    border-radius: 5px; /* Button rounded corners */
     transition: background-color 0.3s, color 0.3s;
 }
 
 nav ul li a:hover {
     background-color: #555;
     color: #fff;
-    border-radius: 5px;
 }
 
 /* Responsive Design */
@@ -83,6 +83,7 @@ nav ul li a:hover {
 
     nav ul {
         grid-template-columns: repeat(2, 1fr); /* 2 columns for nav items on small screens */
+        gap: 20px; /* Increase the gap between nav items */
     }
 
     nav ul li a {

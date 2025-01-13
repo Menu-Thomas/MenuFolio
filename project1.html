@@ -12,23 +12,17 @@
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <div id="navbar"></div>
-
-    <!-- Project Header -->
-    <header class="project-header">
+    <!-- Header with Navigation Bar -->
+    <header>
         <h1>Project 1: IoT</h1>
-        <div class="photo-binder">
-            <div class="arrow left" onclick="prevImage()">&#10094;</div>
-            <img src="project1-image1.jpg" alt="Project 1 Image" class="binder-image">
-            <div class="arrow right" onclick="nextImage()">&#10095;</div>
-            <div class="dots">
-                <span class="dot" onclick="currentImage(1)"></span>
-                <span class="dot" onclick="currentImage(2)"></span>
-                <span class="dot" onclick="currentImage(3)"></span>
-                <!-- Add more dots as needed -->
-            </div>
-        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <!-- Project Description -->
@@ -38,6 +32,5 @@
     </section>
 
     <script src="photo-binder.js"></script>
-    <script src="navbar.js"></script>
 </body>
 </html>

@@ -31,11 +31,19 @@ header.addEventListener('mouseleave', () => {
 
 // Points array
 let points = [];
-const pointCount = 150;
 
 // Create points based on canvas size
 function initPoints() {
     points = [];
+    let pointCount;
+    if (window.innerWidth <= 480) {
+        pointCount = 50; // Fewer points for smartphones
+    } else if (window.innerWidth <= 768) {
+        pointCount = 100; // Moderate points for tablets
+    } else {
+        pointCount = 150; // More points for desktops
+    }
+
     for (let i = 0; i < pointCount; i++) {
         points.push({
             x: Math.random() * canvas.width,   // Random x within canvas width
