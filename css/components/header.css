@@ -21,20 +21,21 @@ header h1 {
 }
 
 nav {
-    position: relative; /* Position the nav bar within the header */
-    z-index: 2; /* Ensure the nav is above the canvas */
-    margin-top: 20px; /* Add some space above the nav bar */
-    padding-top: 10px; /* Add some padding to lower the nav bar */
+    position: fixed; /* Fix the nav bar at the top */
+    top: 0;
+    width: 100%;
+    z-index: 3; /* Ensure the nav is above other elements */
+    padding: 10px 0;
+    text-align: center; /* Add padding for better spacing */
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Responsive grid */
-    gap: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
     margin: 0;
-    justify-items: center; /* Center the nav items */
 }
 
 nav ul li {
@@ -82,8 +83,9 @@ nav ul li a:hover {
     }
 
     nav ul {
+        display: grid;
         grid-template-columns: repeat(2, 1fr); /* 2 columns for nav items on small screens */
-        gap: 20px; /* Increase the gap between nav items */
+        gap: 10px; /* Increase the gap between nav items */
     }
 
     nav ul li a {

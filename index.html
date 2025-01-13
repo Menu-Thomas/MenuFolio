@@ -8,19 +8,15 @@
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components/header.css">
     <link rel="stylesheet" href="css/pages/home.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
 
+    <!-- Navigation Bar -->
+    <div id="navbar"></div>
+
     <!-- Header with Cloud points background -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#projects">Projects</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
         <canvas id="cloudCanvas"></canvas>
     </header>
 
@@ -31,41 +27,28 @@
     <section class="projects" id="projects">
         <div class="article" onclick="location.href='project1.html'">
             <div class="image-container">
-                <img src="project1-image1.jpg" alt="Project 1">
+                <img src="images/project1-image1.jpg" alt="Project 1">
             </div>
             <h2>Project 1: IoT</h2>
             <p>A brief description of the project goes here...</p>
         </div>
         <div class="article" onclick="location.href='project2.html'">
             <div class="image-container">
-                <img src="project2-image.jpg" alt="Project 2">
+                <img src="images/project2-image.jpg" alt="Project 2">
             </div>
             <h2>Project 2: VR</h2>
             <p>A brief description of the project goes here...</p>
         </div>
         <div class="article" onclick="location.href='project3.html'">
             <div class="image-container">
-                <img src="project3-image.jpg" alt="Project 3">
-            </div>
-            <h2>Project 3: Web Development</h2>
-            <p>A brief description of the project goes here...</p>
-        </div>
-        <div class="article" onclick="location.href='project3.html'">
-            <div class="image-container">
-                <img src="project3-image.jpg" alt="Project 3">
-            </div>
-            <h2>Project 3: Web Development</h2>
-            <p>A brief description of the project goes here...</p>
-        </div>
-        <div class="article" onclick="location.href='project3.html'">
-            <div class="image-container">
-                <img src="project3-image.jpg" alt="Project 3">
+                <img src="images/project3-image.jpg" alt="Project 3">
             </div>
             <h2>Project 3: Web Development</h2>
             <p>A brief description of the project goes here...</p>
         </div>
     </section>
 
-    <script src="canvas-animation.js"></script>
+    <script src="js/canvas-animation.js"></script>
+    <script src="js/navbar.js"></script>
 </body>
 </html>

@@ -9,21 +9,27 @@
     <link rel="stylesheet" href="css/components/header.css">
     <link rel="stylesheet" href="css/components/photo-binder.css">
     <link rel="stylesheet" href="css/pages/project.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
 
-    <!-- Header with Navigation Bar -->
-    <header>
-        <h1>Project 1: IoT</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#projects">Projects</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Navigation Bar -->
+    <div id="navbar"></div>
+
+    <!-- Project Header -->
+    <section class="project-header">
+        <div class="photo-binder">
+            <div class="arrow left" onclick="prevImage()">&#10094;</div>
+            <img src="images/project1-image1.jpg" alt="Project 1 Image" class="binder-image">
+            <div class="arrow right" onclick="nextImage()">&#10095;</div>
+            <div class="dots">
+                <span class="dot" onclick="currentImage(0)"></span>
+                <span class="dot" onclick="currentImage(1)"></span>
+                <span class="dot" onclick="currentImage(2)"></span>
+                <!-- Add more dots as needed -->
+            </div>
+        </div>
+    </section>
 
     <!-- Project Description -->
     <section class="project-details">
@@ -31,6 +37,7 @@
         <p>More about the project can go here, such as code snippets, images, and other media related to the project.</p>
     </section>
 
-    <script src="photo-binder.js"></script>
+    <script src="js/photo-binder.js"></script>
+    <script src="js/navbar.js"></script>
 </body>
 </html>

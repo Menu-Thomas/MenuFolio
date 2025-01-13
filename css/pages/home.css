@@ -8,15 +8,14 @@
     z-index: 1; /* Ensure the canvas is behind the header content */
     pointer-events: none; /* Prevent canvas from blocking interactions */
 }
-
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
     gap: 35px; /* Increase the gap between articles */
-    padding: 20px;
-    margin: 20px auto; /* Center the grid container */
-    max-width: 1200px; /* Set a maximum width for the grid container */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    padding: 20px; /* Center the grid container */
+    width: 100%; /* Ensure the grid container takes full width */
+    box-sizing: border-box;
+    position: relative; /* Include padding and border in the element's total width and height */
 }
 
 .article {
@@ -33,6 +32,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-sizing: border-box;
 }
 
 .article:hover {
